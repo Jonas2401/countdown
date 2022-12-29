@@ -1,138 +1,40 @@
 <html>
-
-<head>
-
-  <style>
-
-    /* Add some style to the countdown timer */
-
-    .countdown {
-
-      font-size: 72px;
-
-      text-align: center;
-
-      margin-top: 50px;
-
-    }
-    
-    
-
-    /* Add some style to the fireworks container */
-
-    .fireworks {
-
-      position: absolute;
-
-      top: 0;
-
-      left: 0;
-
-      width: 100%;
-
-      height: 100%;
-
-      z-index: 1;
-
-    }
-
-    /* Add some style to the "Happy New Year" message */
-
-    .message {
-
-      position: absolute;
-
-      top: 50%;
-
-      left: 50%;
-
-      transform: translate(-50%, -50%);
-
-      font-size: 48px;
-
-      color: white;
-
-      text-align: center;
-
-      z-index: 2;
-
-    }
-
-  </style>
-
-  <script src="https://unpkg.com/pyrotek@1.0.0/dist/pyrotek.min.js"></script>
-
-</head>
-<body>
-
-  <!-- Add a div to hold the countdown timer -->
-
-  <div id="countdown" class="countdown"></div>
-
-  <!-- Add a div to hold the fireworks -->
-
-  <div id="fireworks" class="fireworks"></div>
-
-  <!-- Add a div to hold the "Happy New Year" message -->
-
-  <div id="message" class="message">Happy New Year!</div>
-
-  <script>
-
-    // Set the date we're counting down to
-
-    var countDownDate = new Date("Dec 29, 2022 19:20:00").getTime();
-
-    // Update the count down every 1 second
-
-    var x = setInterval(function() {
-
-      var now = new Date().getTime();
-
-      
-
-      // Find the distance between now and the count down date
-
-      var distance = countDownDate - now;
-
-      
-
-      // Time calculations for days, hours, minutes and seconds
-
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      // Output the result in an element with id="countdown"
-
-      document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
-
-      + minutes + "m " + seconds + "s ";
-
-      
-
-         // If the count down is over, write some text and show the fireworks and message
-
-      if (distance < 0) {
-
-        clearInterval(x);
-
-        document.getElementById("countdown").innerHTML = "EXPIRED";
-
-        document.getElementById("fireworks").style.display = "block";
-
-        document.getElementById("message").style.display = "block";
-
-        // Start the fireworks using the Pyrotek library
-
-        var fireworks = new Pyrotek();
-
-        fireworks.start();
-
-      }
-      </script>
+  <head>
+    <title>New Year's Eve Countdown</title>
+  </head>
+  <body>
+    <h1 id="countdown">Countdown to New Year's Eve</h1>
+    <div id="fireworks" style="display:none">
+      <iframe src="https://giphy.com/embed/l0HlP0oNVv7VuOy8w" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    </div>
+
+    <script>
+        // Set the target date to New Year's Eve
+      const targetDate = new Date("Dec 29, 2022 19:37:00");
+
+        // Update the countdown every 1 second
+      setInterval(function() {
+        // Get the current date and time
+        const currentDate = new Date();
+
+        // Calculate the time remaining until the target date
+        const timeRemaining = targetDate - currentDate;
+
+        // Convert the time remaining to days, hours, minutes, and seconds
+        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+        
+        // Update the countdown element
+        document.getElementById("countdown").innerHTML =
+          days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds until New Year's Eve";
+
+        // If the countdown has reached 0, show the fireworks animation
+        if (timeRemaining <= 0) {
+          document.getElementById("fireworks").style.display = "block";
+        }
+      }, 1000);
+    </script>
   </body>
 </html>
