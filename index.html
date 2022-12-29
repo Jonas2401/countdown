@@ -30,7 +30,7 @@
   <!-- Add a script to initialize the countdown timer and fireworks display -->
   <script>
     // Set the target date for the countdown timer
-    const targetDate = new Date("December 29, 2022 18:25:59"); // New Year's Eve
+    const targetDate = new Date("December 29, 2022 18:29:59"); // New Year's Eve
 
     // Initialize the countdown timer
     const countdownTimer = document.getElementById("countdown-timer");
@@ -39,7 +39,7 @@
       const timeRemaining = targetDate - new Date();
       if (timeRemaining < 0) {
         // The target date has been reached, so display "0:00" and start the fireworks display
-        countdownTimer.innerHTML = "0:00";
+        countdownTimer.innerHTML = "";
         const fireworks = new Fireworks();
         fireworks.start();
       } else {
