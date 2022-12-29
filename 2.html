@@ -1,0 +1,164 @@
+<html>
+
+<head>
+
+  <style>
+
+    /* Add some style to the countdown timer */
+
+    .countdown {
+
+      font-size: 72px;
+
+      text-align: center;
+
+      margin-top: 50px;
+
+    }
+    
+    
+
+    /* Add some style to the fireworks container */
+
+    .fireworks {
+
+      position: absolute;
+
+      top: 0;
+
+      left: 0;
+
+      width: 100%;
+
+      height: 100%;
+
+      z-index: 1;
+
+    }
+
+    /* Add some style to the "Happy New Year" message */
+
+    .message {
+
+      position: absolute;
+
+      top: 50%;
+
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+
+      font-size: 48px;
+
+      color: white;
+
+      text-align: center;
+
+      z-index: 2;
+
+    }
+
+  </style>
+
+  <script src="https://unpkg.com/pyrotek@1.0.0/dist/pyrotek.min.js"></script>
+
+</head>
+<body>
+
+  <!-- Add a div to hold the countdown timer -->
+
+  <div id="countdown" class="countdown"></div>
+
+  <!-- Add a div to hold the fireworks -->
+
+  <div id="fireworks" class="fireworks"></div>
+
+  <!-- Add a div to hold the "Happy New Year" message -->
+
+  <div id="message" class="message">Happy New Year!</div>
+
+  <script>
+
+    // Set the date we're counting down to
+
+    var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
+
+    // Update the count down every 1 second
+
+    var x = setInterval(function() {
+
+<body>
+
+  <!-- Add a div to hold the countdown timer -->
+
+  <div id="countdown" class="countdown"></div>
+
+  <!-- Add a div to hold the fireworks -->
+
+  <div id="fireworks" class="fireworks"></div>
+
+  <!-- Add a div to hold the "Happy New Year" message -->
+
+  <div id="message" class="message">Happy New Year!</div>
+
+  <script>
+
+    // Set the date we're counting down to
+
+    var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
+
+    // Update the count down every 1 second
+
+    var x = setInterval(function() {
+
+// Get today's date and time
+
+      var now = new Date().getTime();
+
+      
+
+      // Find the distance between now and the count down date
+
+      var distance = countDownDate - now;
+
+      
+
+      // Time calculations for days, hours, minutes and seconds
+
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      // Output the result in an element with id="countdown"
+
+      document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+
+      + minutes + "m " + seconds + "s ";
+
+      
+
+         // If the count down is over, write some text and show the fireworks and message
+
+      if (distance < 0) {
+
+        clearInterval(x);
+
+        document.getElementById("countdown").innerHTML = "EXPIRED";
+
+        document.getElementById("fireworks").style.display = "block";
+
+        document.getElementById("message").style.display = "block";
+
+        // Start the fireworks using the Pyrotek library
+
+        var fireworks = new Pyrotek();
+
+        fireworks.start();
+
+      }
+      </script>
+      </body>
+      </html>
